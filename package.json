@@ -1,0 +1,23 @@
+{
+	"name": "learnnode",
+	"version": "1.0.0",
+	"description": "learnNodeJs",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vgvsshi/learnNode.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vgvsshi/learnNode/issues"
+	},
+	"homepage": "https://github.com/vgvsshi/learnNode#readme",
+	"devDependencies": {
+		"nodemon": "^2.0.6"
+	}
+}
