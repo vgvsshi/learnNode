@@ -6,7 +6,43 @@
 				<li class="tab col s6"><a href="#register">Sing up</a></li>
 			</ul>
 		</div>
-		<div id="login" class="col s6 offset-s3">Test 1</div>
-		<div id="register" class="col s6 offset-s3">Test 2</div>
+		<div id="login" class="col s6 offset-s3">
+			<h1>Sign in shop</h1>
+			<form action="/add" method="POST">
+				<div class="input-field">
+					<input id="email" name='email' type="email" class="validate" required>
+					<label for="email">Email</label>
+					<span class="helper-text" data-error="Enter email"></span>
+				</div>
+				<div class="input-field">
+					<input id="password" name='password' type="password" class="validate" required>
+					<label for="password">Password</label>
+					<span class="helper-text" data-error="Enter password"></span>
+				</div>
+				<button class="btn btn-primary" type='submit'>Sign in</button>
+			</form>
+		</div>
+		<div id="register" class="col s6 offset-s3">
+			<h1>Sign up shop</h1>
+			<form action="/add" method="POST">
+				<div class="input-field">
+					<input id="remail" name='email' type="email" class="validate" required>
+					<label for="remail">Email</label>
+					<span class="helper-text" data-error="Enter email"></span>
+				</div>
+				<div class="input-field">
+					<input id="rpassword" name='password' type="password" class="validate" required>
+					<label for="rpassword">Password</label>
+					<span class="helper-text" data-error="Enter password"></span>
+				</div>
+				<div class="input-field">
+					<input id="confirm" name='confirm' type="password" class="validate" required>
+					<label for="confirm">Confirm password</label>
+					<span class="helper-text" data-error="Enter password"></span>
+				</div>
+
+				<button class="btn btn-primary" type='submit'>Sign up</button>
+			</form>
+		</div>
 	</div>
 </div>
