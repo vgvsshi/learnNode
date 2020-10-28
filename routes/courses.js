@@ -13,14 +13,14 @@ router.get('/', async (req, res) => {
 	})
 })
 
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/edit', auth, async (req, res) => {
 	if (!req.query.allow) {
 		return res.redirect('/');
 	}
 
 	const course = await Course.findById(req.params.id);
 
-	res.render('courseEdit', auth, {
+	res.render('courseEdit', {
 		title: `Edit ${course.title}`,
 		course
 	})
