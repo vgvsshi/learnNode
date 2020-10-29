@@ -1,3 +1,4 @@
+
 module.exports = function (email) {
 	return {
 		from: '"Fred Foo 👻" <foo@example.com>',
