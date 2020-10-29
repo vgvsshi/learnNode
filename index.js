@@ -22,21 +22,27 @@ const keys = require('./keys')
 
 const app = express()
 
-const hbs = exphbs.create({
-	defaultLayout: 'main',
-	extname: 'hbs'
-});
-
 const store = new MongoStore({
 	collection: 'sessions',
 	uri: keys.MONGODB_URI
 })
 
 app.engine('handlebars', exphbs({
-	handlebars: allowInsecurePrototypeAccess(Handlebars)
+	handlebars: allowInsecurePrototypeAccess(Handlebars),
+	helpers: {
+		if1: function (a, b, options) {
+			if (a == b) {
+				return options.fn(this)
+			}
+			return options.inverse(this)
+		}
+	},
+	defaultLayout: 'main',
+	extname: 'handlebars',
 }));
+
 app.set('view engine', 'handlebars');
-app.set('views', 'views')
+app.set('views', __dirname + '/views/')
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
