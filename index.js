@@ -3,6 +3,7 @@ const path = require('path');
 const csurf = require('csurf');
 const flash = require('connect-flash')
 const mongoose = require('mongoose');
+const helmet = require('helmet')
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars')
 const session = require('express-session');
@@ -59,6 +60,7 @@ app.use(session({
 app.use(fileMiddleware.single('avatar'))
 app.use(csurf())
 app.use(flash())
+app.use(helmet())
 app.use(varMiddleware)
 app.use(userMiddleware)
 
